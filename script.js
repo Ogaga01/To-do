@@ -108,6 +108,18 @@ listContainer.addEventListener("click", (e) => {
     }
 
     if (e.target.classList.contains('fa-trash-can')) {
+        deleteInput = e.target
+        const listItem = deleteInput.closest(".list-item");
+        const id = listItem.getAttribute("id");
+        tasks = tasks.filter((task) => {
+            return id !== task.id
+        })
+        setLocalStorage(tasks)
+        listContainer.innerHTML = "";
+        getLocalStorage()
+    }
+
+    if (e.target.classList.contains('list-input')) {
         
     }
 });
