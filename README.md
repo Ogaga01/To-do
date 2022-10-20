@@ -22,7 +22,7 @@ Build a Todo list using:
 
 ## Live Demo
 
-Check **Live Demo** [here.](https://ha-manel.github.io/Todo-list/dist/)
+Check **Live Demo** [here.](https://ogaga01.github.io/To-do/)
 
 ## Getting Started
 
