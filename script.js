@@ -120,6 +120,22 @@ listContainer.addEventListener("click", (e) => {
     }
 
     if (e.target.classList.contains('list-input')) {
-        
+        listInput = e.target
+        listInput.addEventListener('keydown', (e) => {
+            const value = listInput.value
+            if (e.key === 'Enter') {
+                console.log(value)
+                const listItem = listInput.closest(".list-item");
+                const id = listItem.getAttribute("id");
+                tasks.forEach((task) => {
+                    if (task.id === id) {
+                        task.description = value
+                    }
+                })
+                setLocalStorage(tasks)
+                listContainer.innerHTML = ''
+                getLocalStorage()
+            }
+        })
     }
 });
