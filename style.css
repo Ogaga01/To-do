@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #e9ecef;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  padding: 130px 0;
+}
+
+main {
+  width: 40%;
+  min-width: 450px;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin-top: 2%;
+  background-color: inherit;
+}
+
+.fa-arrows-rotate {
+  margin-right: 5%;
+  color: #a5a594;
+}
+
+.title {
+  margin-left: 5%;
+  color: #000;
+}
+
+.text-input {
+  width: 100%;
+  background-color: inherit;
+  height: 50px;
+  border: 1px solid #e9ecef;
+  box-sizing: border-box;
+  outline: none;
+  padding-left: 5%;
+}
+
+.text-input::placeholder {
+  font-style: italic;
+  color: #a5a58d;
+  font-size: medium;
+}
+
+.todo {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+}
+
+.list-item {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 0;
+  background-color: inherit;
+}
+
+.list-input {
+  width: 85%;
+  outline: none;
+  height: 100%;
+  border: none;
+  color: black;
+}
+
+.fa-square {
+  color: #a5a594;
+  margin-left: 5%;
+}
+
+.fa-trash-can {
+  color: #a5a594;
+  margin-right: 5%;
+}
+
+.submit {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #e9ecef;
+  box-sizing: border-box;
+  outline: none;
+  color: #a5a594;
+}
