@@ -17,9 +17,25 @@ class Task {
     }
 }
 
+const renderTask = (task) => {
+    const html = `
+        <li id="${task.id}" class="list-item">
+                <div class="state">
+                    <i class="fa-regular active fa-square"></i>
+                    <span class="span">✔</span>
+                </div>
+                <input type="text" class="list-input" value="${task.description}">
+                <i class="fa-solid fa-trash-can"></i>
+            </li>
+    `;
+    listContainer.insertAdjacentHTML('afterbegin', html)
+}
+
 textInput.addEventListener('keydown', (e) => {
     const input = textInput.value
-    if (e.key === 'Enter' && task !== '') {
+    if (e.key === 'Enter' && input !== '') {
         const task = new Task(input)
+        renderTask(task)
+        textInput.value = ''
     }
 })
