@@ -105,21 +105,28 @@ ul {
   box-sizing: border-box;
   outline: none;
   color: #a5a594;
+  font-size: large;
 }
 
 .state {
-    margin-left: 5%;
+  margin-left: 5%;
 }
 
 .span {
-    display: none;
+  display: none;
 }
 
 .active {
-    display: block;
-    cursor: pointer;
+  display: block;
+  cursor: pointer;
 }
 
 .line-through {
-    text-decoration: line-through;
+  text-decoration: line-through;
+}
+
+@media all and (max-width: 750px){
+    main {
+        width: 80%;
+    }
 }
