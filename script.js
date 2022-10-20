@@ -79,63 +79,66 @@ listContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("fa-square")) {
     checkbox = e.target;
     const listItem = checkbox.closest(".list-item");
-    console.log(listItem);
     const id = listItem.getAttribute("id");
-      tasks.forEach((task) => {
-        if (task.id === id) {
-            task.checked = true
-          }
-        });
-      setLocalStorage(tasks)
-      listContainer.innerHTML = ''
-      getLocalStorage()
-      checkbox.classList.remove('active')
-      checkbox.classList.add('span')
-    }
-    
-    if (e.target.classList.contains('active')) {
-        mark = e.target
-        const listItem = mark.closest(".list-item");
+    tasks.forEach((task) => {
+      if (task.id === id) {
+        task.checked = true;
+      }
+    });
+    setLocalStorage(tasks);
+    listContainer.innerHTML = "";
+    getLocalStorage();
+    checkbox.classList.remove("active");
+    checkbox.classList.add("span");
+  }
+
+  if (e.target.classList.contains("active")) {
+    mark = e.target;
+    const listItem = mark.closest(".list-item");
+    const id = listItem.getAttribute("id");
+    tasks.forEach((task) => {
+      if (task.id === id) {
+        task.checked = false;
+      }
+    });
+    setLocalStorage(tasks);
+    listContainer.innerHTML = "";
+    getLocalStorage();
+  }
+
+  if (e.target.classList.contains("fa-trash-can")) {
+    deleteInput = e.target;
+    const listItem = deleteInput.closest(".list-item");
+    const id = listItem.getAttribute("id");
+    tasks = tasks.filter((task) => {
+      return id !== task.id;
+    });
+    setLocalStorage(tasks);
+    listContainer.innerHTML = "";
+    getLocalStorage();
+  }
+
+  if (e.target.classList.contains("list-input")) {
+    listInput = e.target;
+    listInput.addEventListener("keydown", (e) => {
+      const value = listInput.value;
+      if (e.key === "Enter") {
+        const listItem = listInput.closest(".list-item");
         const id = listItem.getAttribute("id");
         tasks.forEach((task) => {
           if (task.id === id) {
-            task.checked = false;
+            task.description = value;
           }
         });
         setLocalStorage(tasks);
         listContainer.innerHTML = "";
         getLocalStorage();
-    }
-
-    if (e.target.classList.contains('fa-trash-can')) {
-        deleteInput = e.target
-        const listItem = deleteInput.closest(".list-item");
-        const id = listItem.getAttribute("id");
-        tasks = tasks.filter((task) => {
-            return id !== task.id
-        })
-        setLocalStorage(tasks)
-        listContainer.innerHTML = "";
-        getLocalStorage()
-    }
-
-    if (e.target.classList.contains('list-input')) {
-        listInput = e.target
-        listInput.addEventListener('keydown', (e) => {
-            const value = listInput.value
-            if (e.key === 'Enter') {
-                console.log(value)
-                const listItem = listInput.closest(".list-item");
-                const id = listItem.getAttribute("id");
-                tasks.forEach((task) => {
-                    if (task.id === id) {
-                        task.description = value
-                    }
-                })
-                setLocalStorage(tasks)
-                listContainer.innerHTML = ''
-                getLocalStorage()
-            }
-        })
-    }
+      }
+    });
+  }
 });
+
+refresh.addEventListener('click', () => {
+    listContainer.innerHTML = ''
+    getLocalStorage()
+})
