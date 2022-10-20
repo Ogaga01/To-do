@@ -142,3 +142,13 @@ refresh.addEventListener('click', () => {
     listContainer.innerHTML = ''
     getLocalStorage()
 })
+
+deleteBtn.addEventListener('click', () => {
+    tasks = tasks.filter((task) => {
+        return task.checked === false
+    })
+    console.log(tasks)
+    setLocalStorage(tasks)
+    listContainer.innerHTML = ''
+    getLocalStorage()
+})
