@@ -86,11 +86,11 @@ ul {
   height: 100%;
   border: none;
   color: black;
+  padding-left: 3%;
 }
 
 .fa-square {
   color: #a5a594;
-  margin-left: 5%;
 }
 
 .fa-trash-can {
@@ -105,4 +105,28 @@ ul {
   box-sizing: border-box;
   outline: none;
   color: #a5a594;
+  font-size: large;
+}
+
+.state {
+  margin-left: 5%;
+}
+
+.span {
+  display: none;
+}
+
+.active {
+  display: block;
+  cursor: pointer;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+@media all and (max-width: 750px) {
+  main {
+    width: 80%;
+  }
 }
