@@ -117,6 +117,7 @@ ul {
 
 .active {
     display: block;
+    cursor: pointer;
 }
 
 .line-through {
