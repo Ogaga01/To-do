@@ -90,7 +90,6 @@ ul {
 
 .fa-square {
   color: #a5a594;
-  margin-left: 5%;
 }
 
 .fa-trash-can {
@@ -105,4 +104,16 @@ ul {
   box-sizing: border-box;
   outline: none;
   color: #a5a594;
+}
+
+.state {
+    margin-left: 5%;
+}
+
+.span {
+    display: none;
+}
+
+.active {
+    display: block;
 }
