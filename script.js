@@ -7,6 +7,7 @@ let listInput
 let deleteInput
 const deleteBtn = document.querySelector('.submit')
 const listContainer = document.querySelector(".todo");
+let tasks = [];
 
 class Task {
     date = new Date();
@@ -31,11 +32,30 @@ const renderTask = (task) => {
     listContainer.insertAdjacentHTML('afterbegin', html)
 }
 
+const setLocalStorage = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+}
+
+const getLocalStorage = () => {
+  const data = JSON.parse(localStorage.getItem("tasks"));
+
+  if (!data) return;
+
+  tasks = data;
+
+  tasks.forEach((task) => {
+    renderTask(task);
+  });
+};
+getLocalStorage()
+
 textInput.addEventListener('keydown', (e) => {
     const input = textInput.value
     if (e.key === 'Enter' && input !== '') {
         const task = new Task(input)
         renderTask(task)
+        tasks.push(task)
+        setLocalStorage(tasks)
         textInput.value = ''
     }
 })
