@@ -16,3 +16,10 @@ class Task {
         this.description = description
     }
 }
+
+textInput.addEventListener('keydown', (e) => {
+    const input = textInput.value
+    if (e.key === 'Enter' && task !== '') {
+        const task = new Task(input)
+    }
+})
