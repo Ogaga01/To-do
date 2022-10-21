@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To-Do list
+# To-Do List
 
 > A todo list app in which the user can add new tasks, edit, complete or delete them. The user can also clear all the completed tasks.
 
